@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#global_box{
+    margin-left: 2em;
+    margin-right: 2em;
+    background-color: #1df02e;
+}
+
+    header{
+        background-color: rgb(148, 148, 28);
+    }
+        #header_empresarial{
+            background-color: blanchedalmond;
+            text-align: center;
+            padding: 1em;
+        }
+            #logo_Empresarial{}
+            #slogan_empresarial{}
+
+    #campo_nave{
+        vertical-align: middle;
+        align-items: center;
+        padding: 0.1em;
+    }
+        nav{
+            margin: 0.3em;
+        }
+        
+            #camp_nav_01, #camp_nav_02{
+                vertical-align: middle;
+                display: inline;
+                margin: 6em;
+                text-align: center;
+                padding: 0.45em;
+                min-width: 4em;
+            }
+            #camp_visible_nav_01, #camp_visible_nav_02{
+                position: absolute;
+                z-index: 2;
+                visibility: hidden; 
+                padding: 1em;
+                padding-left: 0.3em;
+                padding-right: 1.5em;
+                opacity: 100%;
+                border: black solid 1px;
+                list-style-type: none;
+                //border-radius: 0 0 10px 5px;
+            }
+            
+            #camp_visible_nav_01{
+                background-color: crimson;
+            }
+            #camp_visible_nav_02{
+                background-color: rgb(154, 84, 211);
+                
+            }
+                #camp_visible_nav_01 > li ,#camp_visible_nav_02 > li{
+                    margin: 0.6em;
+                    
+                }
+                /* li:first-child{
+                    background-color: aqua;
+                } */
+    
+    body{
+
+        
+    }
+        #middle_pag{
+            
+        }

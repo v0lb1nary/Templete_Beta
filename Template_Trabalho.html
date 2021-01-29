@@ -1,0 +1,145 @@
+<!-- {% load static %} -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title> <!-- {% block title_pag %} {% endblock title_pag %} --> </title>
+
+</head>
+
+<div id="global_box">
+
+    <body>
+
+        <header>
+            <!-- Cabeçario -->
+
+            <div id="header_empresarial">
+                <!-- Nome e Slogan da Empresa -->
+                <div id="logo_empresarial"> <img src="" alt="Logo_Empresarial"></div>
+                <div id="slogan_empresarial"> Slogan </div>
+            </div>
+
+            <div id="campo_nave">
+                <!-- Linha de Navegação -->
+                <nav>
+                    <div id="camp_nav_01" onmouseover="camp_nav_visible('camp_nav_01')" onmouseout="camp_nav_invisible('camp_nav_01')">Nav_01</div>
+                    <div id="camp_visible_nav_01" onmouseover="camp_nav_visible('camp_nav_01')" onmouseout="camp_nav_invisible('camp_nav_01')">
+                        <!-- Campo de Navegação -->
+                        <li><a href="">Nome_Link</a></li>
+                        <li><a href="">Nome_Link</a></li>
+                        <li><a href="">Nome_Link</a></li>
+                    </div>
+                    <div id="camp_nav_02" onmouseover="camp_nav_visible('camp_nav_02')" onmouseout="camp_nav_invisible('camp_nav_02')">Nav_02</div>
+                    <div id="camp_visible_nav_02" onmouseover="camp_nav_visible('camp_nav_02')" onmouseout="camp_nav_invisible('camp_nav_02')">
+                        <!-- Campo de Navegação -->
+                        <li><a href="">Nome_Link</a></li>
+                        <li><a href="">Nome_Link</a></li>
+                        <li><a href="">Nome_Link</a></li>
+                    </div>
+                </nav>
+            </div>
+
+        </header>
+
+        <div id="middle_pag">
+
+            <div id="title_conteudo"> <!-- {% block title_conteudo %} {% endblock title_conteudo %} --> </div>
+
+            <div id="conteudo"><!-- Conteúdo da pagina -->
+
+                <article>
+                    <!-- {% block article_middle %} {% endblock article_middle %} -->AAAAAAAAAAAAAAAAA
+                </article>
+
+            </div>
+
+            <aside>
+                <div id="conteudo_aside"> <!-- {% block aside %} {% endblock aside %} --> </div> <!-- Conteudo aside -->
+            </aside>
+
+        </div>
+
+        <footer>
+
+            <div id="redes_sociais">
+                <img src="" alt="Logo Instagram">   <!-- Instagram -->
+                <img src="" alt="Logo Facebook">    <!-- Facebook -->
+                <img src="" alt="Logo WhatsApp">    <!-- Zap -->
+            </div>
+
+            <div id="footer_empresarial">
+                <!-- Nome e Slogan da Empresa -->
+                <div id=""> <img src="" alt="Logo_Empresarial"></div>
+                <div id=""> Slogan </div>
+            </div>
+
+            <div id="direito_register">
+                <!-- Registro autorial da pagina -->
+                <div> direito_register </div> <!-- p -->
+            </div>
+
+            <h2 id="teste"> TESTE </h2>
+            <img src="" alt="socorro">
+
+        </footer>
+
+    </body>
+
+</div>
+
+<script>
+
+    function getPosicaoElemento(elemID) {
+        var Trail = document.getElementById(elemID);
+        var getLeft = 0;
+        var getTop = 0;
+        var getBottom = 0;
+        while (Trail) {
+            getLeft += Trail.offsetLeft;
+            getTop += Trail.offsetTop;
+            getBottom += Trail.offsetHeight;
+            Trail = Trail.offsetParent;
+        }
+        return { left: getLeft, top: getTop, bottom:getBottom };
+        }
+        
+    function setPosicao_navs(id_set, id_get_Lf, id_get_Bt) {
+        var left = (getPosicaoElemento(id_get_Lf).left - 5)
+        var buttom = (getPosicaoElemento(id_get_Bt).bottom)
+
+        console.log(buttom);
+        document.getElementById(id_set).style.left = left.toString() + "px";
+        document.getElementById(id_set).style.buttom = buttom.toString() + "px";
+    }
+
+    setPosicao_navs("camp_visible_nav_01", "camp_nav_01", "campo_nave");
+    setPosicao_navs("camp_visible_nav_02", "camp_nav_02", "campo_nave");
+
+    function camp_nav_visible(id) {
+         if (id == "camp_nav_01") {
+            document.getElementById("camp_visible_nav_01").style.visibility = "visible";
+         } else {
+             if (id == 'camp_nav_02') {
+                 document.getElementById("camp_visible_nav_02").style.visibility = "visible";
+             } else {}
+         }
+    }
+    
+    function camp_nav_invisible(id) {
+        if (id == "camp_nav_01") {
+            document.getElementById("camp_visible_nav_01").style.visibility = "hidden";
+        } else {
+            if (id == 'camp_nav_02') {
+                document.getElementById("camp_visible_nav_02").style.visibility = "hidden";
+            } else {}
+        }
+    }
+
+</script>
+
+</html>
